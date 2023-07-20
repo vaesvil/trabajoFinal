@@ -132,7 +132,9 @@ app.post('/guardar-actualizar-alumno', async (req, res) => {
     res.status(500).json({ message: 'Error al guardar o actualizar los datos del alumno.' });
   }
 });
-
+app.get("/", function(req, res){
+  res.send("Si hay conexion al servidor");
+})
 app.listen(port, async function () {
   console.log("El servidor se encuentra activo en el puerto: " + port);
   conexionBD();
